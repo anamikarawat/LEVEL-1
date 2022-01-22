@@ -254,11 +254,11 @@ public class Main {
       return ml;
     }
 
-    public static Node midNode(Node head, Node tail){
+    public static Node midNode(Node head, Node tail) {
       Node f = head;
       Node s = head;
 
-      while(f != tail && f.next != tail){
+      while (f != tail && f.next != tail) {
         f = f.next.next;
         s = s.next;
       }
@@ -266,8 +266,8 @@ public class Main {
       return s;
     }
 
-    public static LinkedList mergeSort(Node head, Node tail){
-      if(head == tail){
+    public static LinkedList mergeSort(Node head, Node tail) {
+      if (head == tail) {
         LinkedList br = new LinkedList();
         br.addLast(head.data);
         return br;
@@ -279,15 +279,15 @@ public class Main {
       LinkedList sl = mergeTwoSortedLists(fsh, ssh);
       return sl;
     }
-  
-    public void removeDuplicates(){
+
+    public void removeDuplicates() {
       LinkedList res = new LinkedList();
 
-      while(this.size() > 0){
+      while (this.size() > 0) {
         int val = this.getFirst();
         this.removeFirst();
-        
-        if(res.size() == 0 || val != res.tail.data){
+
+        if (res.size() == 0 || val != res.tail.data) {
           res.addLast(val);
         }
       }
@@ -296,7 +296,7 @@ public class Main {
       this.tail = res.tail;
       this.size = res.size;
     }
-    
+
     public void oddEven() {
       LinkedList odd = new LinkedList();
       LinkedList even = new LinkedList();
@@ -328,8 +328,105 @@ public class Main {
         this.size = even.size;
       }
     }
+
+    public void kReverse(int k) {
+      LinkedList prev = null;
+
+      while (this.size > 0) {
+        LinkedList curr = new LinkedList();
+
+        if (this.size >= k) {
+          for (int i = 0; i < k; i++) {
+            int val = this.getFirst();
+            this.removeFirst();
+            curr.addFirst(val);
+          }
+        } else {
+          int sz = this.size;
+          for (int i = 0; i < sz; i++) {
+            int val = this.getFirst();
+            this.removeFirst();
+            curr.addLast(val);
+          }
+        }
+
+        if (prev == null) {
+          prev = curr;
+        } else {
+          prev.tail.next = curr.head;
+          prev.tail = curr.tail;
+          prev.size += curr.size;
+        }
+      }
+
+      this.head = prev.head;
+      this.tail = prev.tail;
+      this.size = prev.size;
+    }
+
+    private void displayReverseHelper(Node node) {
+      if (node == null) {
+        return;
+      }
+      displayReverseHelper(node.next);
+      System.out.print(node.data + " ");
+    }
+
+    public void displayReverse() {
+      displayReverseHelper(head);
+      System.out.println();
+    }
+
+    private void reversePRHelper(Node node) {
+      if (node == tail) {
+        return;
+      }
+      reversePRHelper(node.next);
+      node.next.next = node;
+    }
+
+    public void reversePR() {
+      reversePRHelper(head);
+      Node temp = head;
+      head = tail;
+      tail = temp;
+      tail.next = null;
+    }
+
+    private static int addhelper(Node one, int pv1, Node two, int pv2, LinkedList res) {
+  if (one == null && two == null) {
+    return 0;
+
+  }
+  int sum = 0;
+  if (pv1 > pv2) {
+    int oc = addhelper(one.next, pv1 - 1, two, pv2, res); //pv1=place value of 1
+    sum = one.data + oc;
+  }
+  else if (pv2 > pv1) {
+    int oc = addhelper(one, pv1, two.next, pv2 - 1, res); //pv2=place value of 2
+    sum = two.data + oc;
+  }
+  else {
+    int oc = addhelper(one.next, pv1 - 1, two.next, pv2 - 1, res); //oc= old carry
+    sum = one.data + two.data + oc;
   }
 
+  int c = sum / 10;   //new carry
+  int d = sum % 10;   //new digit of "res"
+  res.addFirst(d);
+  return c;
+
+}
+public static LinkedList addTwoLists(LinkedList one, LinkedList two) {
+  LinkedList res = new LinkedList();
+  int oc = addhelper(one.head, one.size, two.head, two.size, res);
+  if (oc > 0) {
+    res.addFirst(oc);
+  }
+  return res;
+}
+}
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -341,14 +438,24 @@ public class Main {
       l1.addLast(d);
     }
 
+    int n2 = Integer.parseInt(br.readLine());
+    LinkedList l2 = new LinkedList();
+    String[] values2 = br.readLine().split(" ");
+    for (int i = 0; i < n2; i++) {
+      int d = Integer.parseInt(values2[i]);
+      l2.addLast(d);
+    }
+
+    LinkedList sum = LinkedList.addTwoLists(l1, l2);
+
     int a = Integer.parseInt(br.readLine());
     int b = Integer.parseInt(br.readLine());
 
     l1.display();
-    l1.oddEven();
-    l1.display();
-    l1.addFirst(a);
-    l1.addLast(b);
-    l1.display();
+    l2.display();
+    sum.display();
+    sum.addFirst(a);
+    sum.addLast(b);
+    sum.display();
   }
 }
