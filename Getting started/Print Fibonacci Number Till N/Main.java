@@ -12,7 +12,7 @@ import java.util.*;
       a=b;
       b=sum;
     }
-    System.out.println();
+    
 
    }
   
