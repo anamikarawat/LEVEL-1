@@ -20,3 +20,24 @@ public static void main(String[] args) {
     System.out.println(ans);
  }
 }
+
+// public static void main(String[] args) {
+//     Scanner scn = new Scanner(System.in);
+//     int n = scn.nextInt();
+   
+//    int inverse = 0; //inverse number
+//    int op =1;  //original position
+//    while(n != 0){
+//        int od = n %10; //original digit
+//// interchange inverse digit -> original position and inverse position-> original digit
+//        int id = op ; //inverse digit
+//        int ip = od ; //inverse position
+       
+       
+//        inverse += id * (int)Math.pow(10, ip-1); //add all the numbers
+       
+//        n =n/10; // to decrease/short the number
+//        op++; // original position 1,2, 3.....
+//    }
+//    System.out.println(inverse);
+//  }
