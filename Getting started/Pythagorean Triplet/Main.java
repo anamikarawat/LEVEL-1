@@ -1,7 +1,8 @@
 import java.util.*;
   
   public class Main{
-    
+//  Pythagorean Triplet -> right angle triangle -> P^2 + B^2 == H^2 as ( 5^2 + 12^2 == 13^2 )
+
     public static boolean pythagoreanTriplet(int a, int b, int c){
         if(a*a == b*b + c*c) return true;
         else if(b*b == a*a + c*c) return true ;
