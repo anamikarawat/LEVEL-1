@@ -16,6 +16,7 @@ public class Main {
       n2 = remainder;
     }
     int gcd = n2;
+//     using a property that-> gcd*lcm = n1*n2
     int lcm = (temp1 * temp2) / gcd;
 
     System.out.println(gcd);
