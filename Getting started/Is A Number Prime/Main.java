@@ -11,7 +11,7 @@ import java.util.*;
           for (int div =2 ; div*div <= n; div++){
               if (n%div ==0){
                   cout++;
-
+                  break;
                 }
             }
         
