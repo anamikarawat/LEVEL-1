@@ -37,3 +37,33 @@ public class Main {
         pattern16(n);
     }
 }
+
+
+
+
+
+//==================================================================
+    int nsp = 2*n -3 , nst= 1;
+        for(int r =1; r<= n; r++){
+           int count = 1;
+            for (int cst = 1; cst<=nst; cst++){
+                System.out.print( count + "\t");
+                count++;
+            }
+           //space
+           for (int csp = 1; csp <=nsp; csp++){
+               System.out.print("\t");
+           }
+           if (r ==n ){
+               nst--;
+               count--;
+           }
+           for (int cst = 1; cst<=nst; cst++){
+               count--;
+                System.out.print(count + "\t");
+           }
+          
+               nsp -=2;
+               nst++;
+           System.out.println();
+        }
