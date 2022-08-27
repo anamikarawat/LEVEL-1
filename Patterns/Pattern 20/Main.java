@@ -10,7 +10,7 @@ public static void pattern(int n){
         {
           System.out.print("*\t");
         }
-        else if (i > n / 2 && (i == j || i + j == n + 1)) // part of either
+        else if (i > n / 2 && (i == j || i + j == n + 1)) // 2nd half of the diagonal(lower part)
          // diagonal below middle row
         {
           System.out.print("*\t");
