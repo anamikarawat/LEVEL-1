@@ -35,3 +35,12 @@ import java.util.*;
    
     }
   }
+
+
+//=========== decimal substraction ==========
+      if (sub < 0) {
+        sub += 10;
+        borrow = -1;
+      } else {
+        borrow = 0;
+      }
