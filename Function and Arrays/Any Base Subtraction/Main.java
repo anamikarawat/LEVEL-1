@@ -21,13 +21,13 @@ import java.util.*;
        m /= 10;
     
    
-      if(sub<0){
-       sub+=base;
-       borrow = -1;
-
-      }else
-       borrow = 0;
-
+     if (sub < 0) {
+        sub += base;
+        borrow = -1;
+      } else {
+        borrow = 0;
+      }
+       
      ans += sub*pow;
       pow *=10;
     }
