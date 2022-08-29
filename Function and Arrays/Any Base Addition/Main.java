@@ -13,7 +13,7 @@ import java.util.*;
    }
   
    public static int getSum(int b, int n, int m){
-       int result =0;       //new line
+      
        int ans = 0, pow =1, carry =0;
        while(n != 0 || m != 0 || carry != 0){
          int sum = carry + n%10 + m%10;
@@ -29,3 +29,10 @@ import java.util.*;
        return ans;
    }
   }
+
+//=====for decimal addition===============
+         carry = sum /10;
+         sum %= 10;
+//========= for binary addition===========
+        carry = sum /2;
+         sum %= 2;
