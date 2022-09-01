@@ -28,17 +28,17 @@ public class Main{
 
   public static void rotate(int[] a, int k){
       //edge cases
-      k = k%a.length;
+      k = k%a.length;//if k is greater than array ki length
       
-      if(k < 0){
+      if(k < 0){ // if k is negative
           k += a.length;
       }
       
       int n = a.length;
       
-    reverse(a, 0,n-k-1);
-    reverse(a, n-k,n-1);
-    reverse(a, 0,n-1);
+    reverse(a, 0,n-k-1); // reverse part 1
+    reverse(a, n-k,n-1); // reverse part 2
+    reverse(a, 0,n-1);  // reverse whole array
   }
 
 public static void main(String[] args) throws Exception {
