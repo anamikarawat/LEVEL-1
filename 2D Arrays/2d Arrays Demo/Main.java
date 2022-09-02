@@ -18,6 +18,8 @@ public static void main(String[] args) throws Exception {
       for (int j = 0; j < arr[i].length; j++)
       {
         System.out.print (arr[i][j] + " ");
+         //rows = arr.length
+         //columns = arr[0].length
       }
       System.out.println ();
     }
