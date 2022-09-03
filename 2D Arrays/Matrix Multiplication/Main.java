@@ -77,3 +77,56 @@ public static void main(String[] args) throws Exception {
  }
 
 }
+//======================================================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+      Scanner scn = new Scanner(System.in);
+    int n1 = scn.nextInt();
+    int m1 = scn.nextInt();
+
+    int [][] A = new int[n1][m1];
+    for (int i = 0; i < A.length; i++) {
+      for (int j = 0; j < A[0].length; j++) {
+        A[i][j] = scn.nextInt();
+      }
+    }
+
+    int n2 = scn.nextInt();
+    int m2 = scn.nextInt();
+
+    int [][] B = new int[n2][m2];
+    for (int i = 0; i < B.length; i++) {
+      for (int j = 0; j < B[0].length; j++) {
+        B[i][j] = scn.nextInt();
+      }
+    }
+
+    if (m1 != n2) {
+      System.out.println("Invalid input");
+      return;
+    }
+
+    int [][] C = new int[n1][m2];
+
+    for (int i = 0; i < n1; i++) {
+      for (int j = 0; j < m2; j++) {
+        int sum = 0;
+        for (int k = 0; k < m1; k++) {
+          sum += A[i][k] * B[k][j];
+        }
+        C[i][j] = sum;
+      }
+    }
+    for (int i = 0; i < C.length; i++) {
+      for (int j = 0; j < C[0].length; j++) {
+        System.out.print(C[i][j] + " ");
+      }
+      System.out.println();
+    }
+  }
+}
