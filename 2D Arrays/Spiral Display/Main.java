@@ -1,16 +1,16 @@
 import java.io.*;
-
 import java.util.*;
 
 public class Main {
+
   public static void main(String[] args) throws Exception {
     Scanner scn = new Scanner(System.in);
     int n = scn.nextInt();
     int m = scn.nextInt();
     int[][] arr = new int[n][m];
-    
-    for (int i = 0; i < arr.length; i++) {
-      for (int j = 0; j < arr[0].length; j++) {
+
+    for (int i = 0; i < arr.length; i++) {   //n
+      for (int j = 0; j < arr[0].length; j++) { //m
         arr[i][j] = scn.nextInt();
       }
     }
@@ -27,40 +27,47 @@ public class Main {
     while (count < tne) {
 
       //left wall
-      if (count < tne) {
+      if (count < tne) {//extra number print na ho eslea
         for (int i = minrow; i <= maxrow; i++) {
           System.out.println(arr[i][mincol]);
+          //row increase from minrow to maxrow but column doesn't vary
           count++;
         }
       }
-      mincol++;
+      mincol++;//corner ka ek extra number print na ho eslea mincol ek step agea
+
 
       //bottom wall
-      if (count < tne) {
-        for (int i = mincol; i <= maxcol; i++) {
-          System.out.println(arr[maxrow][i]);
+      if (count < tne) {//extra number print na ho eslea
+        for (int j = mincol; j <= maxcol; j++) {
+          //column increase from mincol to maxcol but row doesn't vary
+          System.out.println(arr[maxrow][j]);
           count++;
         }
       }
-      maxrow--;
+      maxrow--;//corner ka ek extra number print na ho eslea maxrow ek step pichea
+
 
       //right wall
-      if (count < tne) {
+      if (count < tne) {//extra number print na ho eslea
         for (int i = maxrow; i >= minrow; i--) {
+          //row decrease from maxrow to minrow but column doesn't vary
           System.out.println(arr[i][maxcol]);
           count++;
         }
       }
-      maxcol--;
+      maxcol--;//corner ka ek extra number print na ho eslea maxcol ek step pichea
+
 
       //top wall
-      if (count < tne) {
-        for (int i = maxcol; i >= mincol; i--) {
-          System.out.println(arr[minrow][i]);
+      if (count < tne) { //extra number print na ho eslea
+        for (int j = maxcol; j >= mincol; j--) {
+          //column decrease from maxcol to mincol but row doesn't vary
+          System.out.println(arr[minrow][j]);
           count++;
         }
       }
-      minrow++;
+      minrow++;//corner ka ek extra number print na ho eslea minrow ek step agea
     }
   }
 }
