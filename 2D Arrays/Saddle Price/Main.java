@@ -13,18 +13,22 @@ public class Main {
         arr[i][j] = scn.nextInt();
       }
     }
+
+
     int colno = 0, min = 0;
-    for (int i = 0; i < n; i++) {   // rows
+    for (int i = 0; i < n; i++) {   // check in rows ki least konsa number h
       min = arr[i][colno];
-      for (int j = 0; j < n; j++) {   // columns
+      for (int j = 0; j < n; j++) {   //move columns
         if (min > arr[i][j]) {
           min = arr[i][j];
-          colno = j;
+          colno = j; //change column idx
         }
       }
+
+
       boolean potentialAns = true;
-      for (int r = 0; r < n; r++) {
-        if (min < arr[r][colno]) {
+      for (int r = 0; r < n; r++) { //moves rows 
+        if (min < arr[r][colno]) { //check that number ki vo maximum hai ya nhi columns mea
           potentialAns = false;
           break;
         }
