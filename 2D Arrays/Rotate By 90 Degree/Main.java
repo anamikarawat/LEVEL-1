@@ -29,21 +29,7 @@ public class Main {
     
     public static void reverse(int [][] arr){
         int n = arr.length;
-        // for(int i = 0; i<n ; i++){
-        //     int li = 0;
-        //     int ri = n-1;
-            
-        //     while(li<=ri){
-        //         int tmp = arr[i][li];
-        //         arr[i][li] = arr[i][ri];
-        //         arr[i][ri] = tmp;
-                
-        //         li++;
-        //         ri--;
-        //     }
-            
-        // }
-           ////abstraction-for each loop lia
+       //abstraction-for each loop lia
         for(int [] d : arr)    //for every single 1D array present in 2D array -reverse 1D array
             reverse1D(d);
 
@@ -104,10 +90,11 @@ public class Main {
         arr[j][i] = tmp;
       }
     }
+      
     // 2. Reverse each row
     for (int i = 0; i < n ; i++) {
-      int li = 0;
-      int ri = n - 1;
+      int li = 0; //left index 
+      int ri = n - 1;  // right index
 
       while (li <= ri) {
         int tmp = arr[i][li];
@@ -117,9 +104,7 @@ public class Main {
         li++;
         ri--;
       }
-
     }
-
     display(arr);
   }
 
@@ -131,6 +116,4 @@ public class Main {
       System.out.println();
     }
   }
-
-
 }
