@@ -16,10 +16,10 @@ public class Main {
 
 
     int colno = 0, min = 0;
-    for (int i = 0; i < n; i++) {   // check in rows ki least konsa number h
-      min = arr[i][colno];
+    for (int i = 0; i < n; i++) {   //rows
+      min = arr[i][colno]; //initial point (0,0)
       for (int j = 0; j < n; j++) {   //move columns
-        if (min > arr[i][j]) {
+        if (min > arr[i][j]) {// check in rows ki least konsa number h
           min = arr[i][j];
           colno = j; //change column idx
         }
