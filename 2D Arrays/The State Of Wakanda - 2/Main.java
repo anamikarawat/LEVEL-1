@@ -21,3 +21,4 @@ public class Main {
     }
 }
 
+//also known as diagonal traversal
