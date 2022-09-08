@@ -11,7 +11,7 @@ public class Main {
     Node head;
     Node tail;
     int size;
-//1.create new node with help of new
+    //1.create new node with help of new
     //2. assign val
     //3. connect tail and temp
      void addLast(int val) {
