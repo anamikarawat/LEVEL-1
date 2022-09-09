@@ -84,9 +84,11 @@ public class Main {
       }
     }
 
+    //=============code==============
     public void addFirst(int val) {
 
-      Node temp = new Node();
+      Node temp = new Node(); //create a node
+      
       temp.data = val;
       temp.next = head;
        head = temp;
@@ -97,6 +99,8 @@ public class Main {
       size++;
     }
   }
+  //======================================
+  
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     LinkedList list = new LinkedList();
