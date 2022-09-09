@@ -47,6 +47,22 @@ public class Main {
       size--;
     }
  //===============================
+ //============2nd method=========
+//      public void removeFirst() {
+//       if (size == 0) {
+//         System.out.println("List is empty");
+//         return;
+        
+//       } else if (size == 1) {
+//         head = tail = null;
+//         size = 0;
+        
+//       } else {
+//         head = head.next;
+//         size--;
+//       }
+
+//     }
   }
 
   public static void main(String[] args) throws Exception {
