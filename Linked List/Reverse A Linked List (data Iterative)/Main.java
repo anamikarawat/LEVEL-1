@@ -156,36 +156,43 @@ public class Main {
     }
 
     private Node getNodeAt(int idx) {
+      //private function vo hote h jo class k bahar se call nhi kiye jate , jinhe main se call nhi kar sakte h
+      //private function is for personal use only.
       if (size == 0) {
         System.out.println("List is empty");
-        return null;
+        
+        return null;   
       } else if (idx < 0 || idx >= size) {
         System.out.println("Invalid arguments");
+        
         return null;
       } else {
         Node temp = head;
+        
         for (int i = 0; i < idx; i++) {
           temp = temp.next;
         }
+        //get node at se pura node return kardega
         return temp;
       }
     }
     
 
     public void reverseDI() {
-        int i = 0;
-        int j = size-1;
+        int li = 0; //left index
+        int ri = size-1; //right index
         
-      while(i <= j){
-        Node left = getNodeAt(i);
-        Node right = getNodeAt(j);
+      while(li < ri){
+        Node left = getNodeAt(li);
+        Node right = getNodeAt(ri);
         
+        //swap the nodes
         int temp = left.data;
         left.data = right.data;
         right.data = temp;
         
-        i++;
-        j--;
+        li++;
+        ri--;
       }
     }
   }
