@@ -37,7 +37,7 @@ public class Main {
       }
       System.out.println();
     }
-
+//===========code================
     public void removeFirst(){
       if(size == 0){
           System.out.println("List is empty");
@@ -46,6 +46,7 @@ public class Main {
       head = head.next;
       size--;
     }
+ //===============================
   }
 
   public static void main(String[] args) throws Exception {
