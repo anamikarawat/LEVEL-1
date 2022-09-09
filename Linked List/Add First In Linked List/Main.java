@@ -86,14 +86,14 @@ public class Main {
 
     public void addFirst(int val) {
 
-      Node t = new Node();
-      t.data = val;
-      t.next = head;
-      if (size == 0)
-      {
-        tail = t;
+      Node temp = new Node();
+      temp.data = val;
+      temp.next = head;
+       head = temp;
+      
+      if (size == 0){
+        tail = temp;
       }
-      head = t;
       size++;
     }
   }
