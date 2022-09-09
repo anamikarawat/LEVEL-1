@@ -49,7 +49,7 @@ public class Main {
         size--;
       }
     }
-
+//================code==============
     public int getFirst() {
       if (size == 0) {
         System.out.println("List is empty");
@@ -85,7 +85,7 @@ public class Main {
       }
     }
   }
-
+//==============================================
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
