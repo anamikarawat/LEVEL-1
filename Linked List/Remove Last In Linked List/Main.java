@@ -101,10 +101,13 @@ public class Main {
     public void addAt(int idx, int val){
       if(idx < 0 || idx > size){
         System.out.println("Invalid arguments");
+        
       } else if(idx == 0){
         addFirst(val);
+        
       } else if(idx == size){
         addLast(val);
+        
       } else {
         Node node = new Node();
         node.data = val;
@@ -119,26 +122,32 @@ public class Main {
         size++;
       }
     }
-
+//=========code==================================
     private Node getNodeAt(int idx) {
       if (size == 0) {
         System.out.println("List is empty");
+        
         return null;
+        
       } else if (idx < 0 || idx >= size) {
         System.out.println("Invalid arguments");
+        
         return null;
+        
       } else {
         Node temp = head;
+        
         for (int i = 0; i < idx; i++) {
           temp = temp.next;
         }
         return temp;
       }
     }
-    
+  
     public void removeLast(){
       if(size == 0){
-        System.out.println("List is empty");      
+        System.out.println("List is empty");  
+        
       }
       else if(size == 1){
           head = null;
@@ -152,7 +161,31 @@ public class Main {
       size--;
     }
   }
+//===============================================================
+//========================2nd method ===========================
+//    public void removeLast() {
+//       if (size == 0) {
+//         System.out.println("List is empty");
 
+//       }
+//       else if (size == 1) {
+//         head = null;
+//         tail = null;
+
+//         size = 0;
+//       }
+//       else {
+//         Node temp = head;
+//         for (int i = 0; i < size - 2; i++) {
+//           temp = temp.next;
+//         }
+//         tail = temp;
+//         temp.next = null;
+//         size--;
+//       }
+
+//     }
+  //==========================================================
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     LinkedList list = new LinkedList();
