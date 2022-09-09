@@ -96,28 +96,36 @@ public class Main {
 
       size++;
     }
-
+//=============code==========================
      public void addAt(int idx, int val) {
+       
       if (idx < 0 || idx > size) {
         System.out.println("Invalid arguments");
+        
       } else if (idx == 0) {
-        addFirst(val);
+        addFirst(val); //use addFirst vala function
+        
       } else if (idx == size) {
-        addLast(val);
+        addLast(val);  //use addLast vala function
+        
       } else {
         Node node = new Node();
+        
         node.data = val;
         Node temp = head;
+        
         for (int i = 0; i < idx - 1; i++) {
           temp = temp.next;
         }
+        
         node.next = temp.next;
         temp.next = node;
+        
         size++;
       }
     }
   }
-
+//==================================================
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     LinkedList list = new LinkedList();
