@@ -213,13 +213,19 @@ public class Main {
 
       return slow.data;
     }
-
+//=========================== CODE ===================
+    //using iteration
+    //only one traversal
+    // do not use size property
     public int mid() {
+   //using 2 pointer approach   
       Node s = head;
       Node f = head;
+   // Odd LL hogi toh fast.next = null mea Slow = MID hoga
+   // Even LL hogi toh fast.next.next = null mea Slow = MID hoga   
       while (f.next != null && f.next.next != null) {
-        s = s.next;
-        f = f.next.next;
+        s = s.next; //move 1 step ahead
+        f = f.next.next; // move 2 step ahead
       }
       return s.data;
     }
