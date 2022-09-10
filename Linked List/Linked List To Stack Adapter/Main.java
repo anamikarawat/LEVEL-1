@@ -10,7 +10,7 @@ public class Main {
       list = new LinkedList<>();
     }
 
-
+//======================code====================
    int size() {
       return list.size();
     }
@@ -27,7 +27,7 @@ public class Main {
      return list.getFirst();
     }
   }
-  
+//======================================================  
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     LLToStackAdapter st = new LLToStackAdapter();
