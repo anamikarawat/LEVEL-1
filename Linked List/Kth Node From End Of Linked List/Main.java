@@ -198,21 +198,28 @@ public class Main {
       head = tail;
       tail = temp;
     }
-  
+  //============================================
+    //use iteration or iterative solution , not recursive
+    //only single traversal
+    // size function or property use nhi kari hai directly or indirectly
     public int kthFromLast(int k){
-        Node s=head;
-        Node f= head;
-        for(int i=0;i<k;i++){
-            f=f.next;
-        }
-        while(f !=tail){
-            s=s.next;
-            f=f.next;
-        }
-        return s.data;
+      Node slow = head;
+      Node fast = head;
+      
+      for(int i = 0; i < k; i++){
+        fast = fast.next;  // fast ko 'K' ka jump
       }
+
+      while(fast != tail){
+        //single-single jump
+        slow = slow.next; 
+        fast = fast.next;
+      }
+
+      return slow.data; // return slow ka data
     }
-  
+  }
+  //===================================================
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
