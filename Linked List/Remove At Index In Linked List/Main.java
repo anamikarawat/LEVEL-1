@@ -136,25 +136,29 @@ public class Main {
         size--;
       }
     }
-
+//============= Code ===========================
     public void removeAt(int idx) {
-      if(idx<0 || idx>=size){
+      if(idx<0 || idx>=size){ //idx negative hua ya idx size se bahar hua 
           System.out.println("Invalid arguments");
-      }else if(idx==0){
+        
+      }else if(idx==0){ //remove 1st element
           removeFirst();
-      }else if(idx==size-1){
+        
+      }else if(idx==size-1){ //remove last element
           removeLast();
+        
       }else{
-          Node temp=head;
+          Node temp=head; // temp = head fir loop chalaya jab tak  humea idx chahiye
+        
           for(int i=0;i<idx-1;i++){
               temp=temp.next;
           }
-          temp.next=temp.next.next;
+          temp.next=temp.next.next; //removed
           size--;
       }
     }
   }
-
+//===========================================
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     LinkedList list = new LinkedList();
