@@ -253,7 +253,7 @@ public class Main {
 
       return ml;
     }
-
+//======================CODE=========================================== 
     public static Node midNode(Node head, Node tail) {
         Node slow = head;
         Node fast = head;
@@ -264,10 +264,8 @@ public class Main {
         }
         return slow;
 
-  }
-
-    
-  public static LinkedList mergeSort(Node head, Node tail){
+  }  
+   public static LinkedList mergeSort(Node head, Node tail){
       if( head == tail ){
           LinkedList base = new LinkedList();
           base.addFirst(head.data);
@@ -280,6 +278,7 @@ public class Main {
       LinkedList right = mergeSort(mid.next, tail);    //right
       return mergeTwoSortedLists(left, right);
     }
+//======================================================================    
 }
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
