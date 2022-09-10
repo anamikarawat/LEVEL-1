@@ -179,27 +179,30 @@ public class Main {
       }
     }
  
-    public void reversePI(){
-      if(size <= 1){
+    //================== CODE ==========================
+     public void reversePI() {
+      if (size <= 1) {
         return;
       }
 
       Node prev = null;
       Node curr = head;
-      while(curr != null){
-        Node next = curr.next;
-        
-        curr.next = prev;
+      while (curr != null) {
+        Node next = curr.next;  //humne phele hi original current k next ko save kardia
+
+        curr.next = prev;//change kardo
+
+        //Jump 1 step forward
         prev = curr;
         curr = next;
       }
-
+      //head or tail ko swap kardo
       Node temp = head;
       head = tail;
       tail = temp;
     }
   }
-
+//====================================================
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     LinkedList list = new LinkedList();
