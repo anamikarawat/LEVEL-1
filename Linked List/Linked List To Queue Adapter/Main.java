@@ -9,11 +9,13 @@ public class Main {
     public LLToQueueAdapter() {
       list = new LinkedList<>();
     }
-
+//===============================================
     int size() {
       return list.size();
     }
-
+ // add last - O(1)
+ // remove first - O(1)
+ // get first - O(1)
     void add(int val) {
       list.addLast(val);
     }
@@ -36,6 +38,7 @@ public class Main {
       }
     }
   }
+  //===================================================
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     LLToQueueAdapter qu = new LLToQueueAdapter();
