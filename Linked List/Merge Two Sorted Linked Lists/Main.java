@@ -225,33 +225,39 @@ public class Main {
 
             return s.data;
         }
-
-       public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2) {
-       Node one = l1.head;
-           Node two = l2.head;
-        LinkedList res = new LinkedList();
-       while (one != null && two != null) {
-         if (one.data < two.data) {
-      res.addLast(one.data);
-      one = one.next;
-      } else {
-      res.addLast(two.data);
-      two = two.next;
-    }
-  }
-     while (one != null) {
-    res.addLast(one.data);
-    one = one.next;
-   }
-  while (two != null) {
-    res.addLast(two.data);
-    two = two.next;
-     }
-    return res;
+//==============================================================================================
+      public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2) {
+      Node one = l1.head;
+      Node two = l2.head;
+          
+      LinkedList res = new LinkedList(); // we made a new LL which we will return in last
+          
+      while (one != null && two != null) {
+        if (one.data < two.data) {
+          res.addLast(one.data);
+          one = one.next; //jump to next 
+        } else {
+          res.addLast(two.data);
+          two = two.next; //jump to next
+        }
+      }
+          
+      while (one != null) {
+ // agar 2nd LL khatam hogyi h but 1st LL khatam nhi hui h toh baki sare 1st k element print kardo         
+        res.addLast(one.data);
+        one = one.next;
+      }
+          
+      while (two != null) {
+// agar 1st LL khatam hogyi h but 2nd LL khatam nhi hui h toh baki sare 2nd k element print kardo          
+        res.addLast(two.data);
+        two = two.next;
+      }
+      return res;
     }
     
-    }
-
+  }
+//===============================================================================================
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
