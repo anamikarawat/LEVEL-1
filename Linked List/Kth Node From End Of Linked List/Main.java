@@ -203,6 +203,7 @@ public class Main {
     //only single traversal
     // size function or property use nhi kari hai directly or indirectly
     public int kthFromLast(int k){
+      // using 2 pointer approach
       Node slow = head;
       Node fast = head;
       
