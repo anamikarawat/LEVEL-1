@@ -296,7 +296,7 @@ public class Main {
       this.tail = res.tail;
       this.size = res.size;
     }
-    
+  //===========================================   
     public void oddEven() {
       LinkedList odd = new LinkedList();
       LinkedList even = new LinkedList();
