@@ -314,20 +314,23 @@ public class Main {
 
       if (odd.size > 0 && even.size > 0) {
         odd.tail.next = even.head;
-
+//agar dono LinkedList present ho odd or even 
         this.head = odd.head;
         this.tail = even.tail;
         this.size = odd.size + even.size;
       } else if (odd.size > 0) {
+//agar sirf odd LinkedList ho        
         this.head = odd.head;
         this.tail = odd.tail;
         this.size = odd.size;
       } else if (even.size > 0) {
+ //agar sirf even LinkedList ho        
         this.head = even.head;
         this.tail = even.tail;
         this.size = even.size;
       }
     }
+  //===========================================
   }
 
   public static void main(String[] args) throws Exception {
