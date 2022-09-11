@@ -328,7 +328,7 @@ public class Main {
         this.size = even.size;
       }
     }
-
+//=========================================================
      public void kReverse(int k) {
       LinkedList prev = null;
 
@@ -364,7 +364,7 @@ public class Main {
       this.size = prev.size;
     }
   }
-
+//======================================================================
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
