@@ -279,20 +279,24 @@ public class Main {
       LinkedList sl = mergeTwoSortedLists(fsh, ssh);
       return sl;
     }
-  
+//=====================================================================  
     public void removeDuplicates(){
       LinkedList l1= new LinkedList();
+      
       while(this.size()>0){
-          int val=this.getFirst();
-         this.removeFirst();
+     //this jo hai vo duplicate old list h   
+         int val=this.getFirst(); //O(1)
+         this.removeFirst(); //O(1)
           if(l1.size==0|| l1.tail.data !=val){
-              l1.addLast(val);
+              l1.addLast(val); //O(1)
           }
       }
+      //this se l1 mea kyuki hum last mea l1 ko hi display karva rahe h
       this.head=l1.head;
       this.tail=l1.tail;
       this.size=l1.size;
     }
+//==================================================================    
   }
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
