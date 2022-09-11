@@ -363,21 +363,22 @@ public class Main {
       this.tail = prev.tail;
       this.size = prev.size;
     }
-
+//=====================================================================
+// actual reverse nhi karna h LinkedList ko sirf display reverse karna h    
     private void displayReverseHelper(Node node) {
       if (node == null) {
         return;
       }
-      displayReverseHelper(node.next);
+      displayReverseHelper(node.next); //recursion
       System.out.print(node.data + " ");
     }
-
+//=====================================================================
     public void displayReverse() {
       displayReverseHelper(head);
       System.out.println();
     }
   }
-    
+ 
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
