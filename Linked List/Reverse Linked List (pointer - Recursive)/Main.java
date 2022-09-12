@@ -376,14 +376,14 @@ public class Main {
       displayReverseHelper(head);
       System.out.println();
     }
- 
+ //======================================================
    private void reversePRHelper(Node node) {
       if (node == tail) {
         return;
       }
       reversePRHelper(node.next);
       if(node == tail){
-          
+         // nothing to do 
       }
       else{
           node.next.next = node;
@@ -397,12 +397,13 @@ public class Main {
     //   tail = temp;
     //   tail.next = null;
     head.next= null;
+      //swap
     Node temp = head;
     head = tail;
     tail = temp;
     }
   }
-
+//=======================================================================
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
