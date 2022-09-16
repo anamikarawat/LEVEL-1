@@ -18,7 +18,7 @@ public class Main {
             return;
 
         }
-        displayArrReverse(arr, idx + 1);
+        displayArrReverse(arr, idx + 1); // backtracking
         System.out.println(arr[idx]);
     }
 
