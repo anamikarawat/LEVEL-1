@@ -34,16 +34,17 @@ public class Main {
 
 // better way and optimize 
 // In this code, hum phele se hi compare karte hue agea badh rahe h. phele compare kiya agar same aya toh vo idx return kardo verna agea dhundo
-public static int firstIndex(int[] arr, int idx, int x) {
-    if (idx == arr.length) {
-      return -1;
 
-    }
-    if (arr[idx] == x) {
-      return idx;
-    } else {
-      //fiisa = first index in small array
-      int fiisa = firstIndex(arr, idx + 1, x);
-      return fiisa;
-    }
- }
+// public static int firstIndex(int[] arr, int idx, int x) {
+//     if (idx == arr.length) {
+//       return -1;
+
+//     }
+//     if (arr[idx] == x) {
+//       return idx;
+//     } else {
+//       //fiisa = first index in small array
+//       int fiisa = firstIndex(arr, idx + 1, x);
+//       return fiisa;
+//     }
+//  }
