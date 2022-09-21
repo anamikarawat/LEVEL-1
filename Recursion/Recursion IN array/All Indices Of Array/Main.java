@@ -26,11 +26,11 @@ public class Main {
 
     public static int[] allIndices(int[] arr, int x, int idx, int fsf) {
        if(idx == arr.length){
-           return new int[fsf];
+           return new int[fsf]; //new array banaya ya return kiya [found so far] idx ka
        }
        if(arr[idx]==x){
            int[] iarr = allIndices(arr,x,idx+1, fsf+1);
-           iarr[fsf]= idx;
+           iarr[fsf]= idx; // new array k idx mea -> present number ka idx dal diya
            return iarr;
        }else{
            int[] iarr= allIndices(arr,x,idx+1,fsf);
